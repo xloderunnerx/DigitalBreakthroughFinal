@@ -3315,6 +3315,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 107834, guid: fd983362cd401ec4f984f98d4f15386c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 160198, guid: fd983362cd401ec4f984f98d4f15386c, type: 3}
       propertyPath: m_Name
       value: MiniMap2D [Square]
@@ -3382,6 +3386,22 @@ PrefabInstance:
     - target: {fileID: 11450988, guid: fd983362cd401ec4f984f98d4f15386c, type: 3}
       propertyPath: ShowAreaGrid
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22401134, guid: fd983362cd401ec4f984f98d4f15386c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 22401134, guid: fd983362cd401ec4f984f98d4f15386c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -64.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426270, guid: fd983362cd401ec4f984f98d4f15386c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.5999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426270, guid: fd983362cd401ec4f984f98d4f15386c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -49.3
       objectReference: {fileID: 0}
     - target: {fileID: 22478736, guid: fd983362cd401ec4f984f98d4f15386c, type: 3}
       propertyPath: m_SizeDelta.x
