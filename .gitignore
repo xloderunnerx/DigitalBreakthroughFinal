@@ -9,6 +9,25 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/[Aa]ssets/_TerrainAutoUpgrade
+/[Aa]ssets/3D Haven
+/[Aa]ssets/AdvancedTerrainGrass
+/[Aa]ssets/Assets_ElectricGenerators
+/[Aa]ssets/Desktop_Tree_Package
+/[Aa]ssets/Free_SpeedTrees
+/[Aa]ssets/GG-Textures
+/[Aa]ssets/GrassFlowers
+/[Aa]ssets/klen
+/[Aa]ssets/PhotoscannedToadstools
+/[Aa]ssets/RocksPackage
+/[Aa]ssets/Samples
+/[Aa]ssets/SampleScenes
+/[Aa]ssets/SuburbNeighborhoodHousePack
+/[Aa]ssets/YughuesFreeBushes2018
+/[Aa]ssets/PBRMat
+/[Aa]ssets/AzureDynamicSkybox
+/[Aa]ssets/GroundTexturesPack
+/[Aa]ssets/StandardAssets
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
