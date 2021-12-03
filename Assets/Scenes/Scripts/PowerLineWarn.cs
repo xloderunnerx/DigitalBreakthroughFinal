@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class PowerLineWarn : MonoBehaviour
 {
+    public bool isExam;
     public string warning;
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,6 +25,8 @@ public class PowerLineWarn : MonoBehaviour
         if (droneStats.insidePowerlineZone)
             return;
         droneStats.insidePowerlineZone = true;
+        if (isExam)
+            return;
         Speaker.Instance.SpeakNative(warning, Speaker.Instance.VoiceForGender(Crosstales.RTVoice.Model.Enum.Gender.FEMALE, "ru-RU", 0, "ru-RU"), 1.3f, 1, 1, true);
     }
 
