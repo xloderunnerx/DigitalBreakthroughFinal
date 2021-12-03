@@ -45,6 +45,8 @@ public class RaycastFallenWireUnit : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             powerUnit.collected = true;
+            StatisticsExamController.instance.UpdateFallenWire();
+            StatisticsExamController.instance.SaveData();
         }
 
         if (locked != powerUnit)

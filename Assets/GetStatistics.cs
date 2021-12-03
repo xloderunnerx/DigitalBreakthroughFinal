@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class GetStatistics : MonoBehaviour
 {
+    public bool isExam;
+
     public GameObject drone;
-    public int charges;
+    public uint charges;
 
     public TextMeshProUGUI chargesLabel;
     public TextMeshProUGUI heightDroneLabel;
@@ -41,6 +43,8 @@ public class GetStatistics : MonoBehaviour
         if (Physics.Raycast(drone.transform.position, drone.transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
         {
             heightDroneLabel.text = "Высота: " + hit.distance.ToString() + "м";
+            if(isExam)
+            StatisticsExamController.instance.UpdateHeight(hit.distance);
         }
     }
 }
