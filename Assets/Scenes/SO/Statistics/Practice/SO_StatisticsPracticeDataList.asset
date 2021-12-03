@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: SO_StatisticsPracticeDataList
   m_EditorClassIdentifier: 
   value:
-    data: []
+    data:
+    - flightTime: 31.15191
+      prevTries: 0
+      powerLinesEncounters: 1
+      wrongPowerPlantItems: 1
+      maxHeight: 23.430634
+      hitsCount: 1
+      droneHealthState: 90
   save: 1
   logSave: 0
   defaultValue: {fileID: 11400000, guid: 83237bc0b9b48b5429906f6ae44dc34d, type: 2}
