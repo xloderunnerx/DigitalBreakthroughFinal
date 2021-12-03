@@ -1,3 +1,4 @@
+using Crosstales.RTVoice;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ public class RaycastPowerUnit : MonoBehaviour
     public GameObject buttonHintPrefab;
     public GameObject buttonHint;
     public PowerPlantUnit locked;
+    public string warning;
     void Start()
     {
         
@@ -15,6 +17,7 @@ public class RaycastPowerUnit : MonoBehaviour
 
     void Update()
     {
+        
         if (buttonHint != null)
         {
             buttonHint.transform.LookAt(new Vector3(Camera.main.transform.position.x, buttonHint.transform.position.y, Camera.main.transform.position.z));
@@ -31,6 +34,12 @@ public class RaycastPowerUnit : MonoBehaviour
             Destroy(buttonHint);
             return;
         }
+
+        if (Input.GetKeyDown(KeyCode.E) && !hit.collider.GetComponentInParent<PowerPlantUnit>().isBroken)
+        {
+            Speaker.Instance.SpeakNative(warning, Speaker.Instance.VoiceForGender(Crosstales.RTVoice.Model.Enum.Gender.FEMALE, "ru-RU", 0, "ru-RU"), 1.3f, 1, 1, true);
+        }
+
         var powerUnit = hit.collider.GetComponentInParent<PowerPlantUnit>();
         if(locked != powerUnit)
         {

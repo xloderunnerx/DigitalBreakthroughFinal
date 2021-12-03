@@ -1,10 +1,11 @@
+using Crosstales.RTVoice;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PowerLineWarn : MonoBehaviour
 {
-    
+    public string warning;
     void Start()
     {
         
@@ -23,7 +24,7 @@ public class PowerLineWarn : MonoBehaviour
         if (droneStats.insidePowerlineZone)
             return;
         droneStats.insidePowerlineZone = true;
-        Debug.Log("YOU'RE TOO CLOSE TO THE POWER LINE.");
+        Speaker.Instance.SpeakNative(warning, Speaker.Instance.VoiceForGender(Crosstales.RTVoice.Model.Enum.Gender.FEMALE, "ru-RU", 0, "ru-RU"), 1.3f, 1, 1, true);
     }
 
     private void OnTriggerExit(Collider other)

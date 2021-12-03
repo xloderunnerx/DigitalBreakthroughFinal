@@ -1,4 +1,4 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -30,14 +30,14 @@ public class GetStatistics : MonoBehaviour
     void Update()
     {
         ChangeChargesDrone();
-        coordinatesLabel.text = "Координата: " + drone.transform.position.x + "," + drone.transform.position.y;
+        coordinatesLabel.text = "РљРѕРѕСЂРґРёРЅР°С‚С‹: " + drone.transform.position.x + "," + drone.transform.position.y;
     }
 
     private void FixedUpdate()
     {
         if (Physics.Raycast(drone.transform.position, drone.transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
         {
-            heightDroneLabel.text = "Высота: " + hit.distance.ToString() + " м";
+            heightDroneLabel.text = "Р’С‹СЃРѕС‚Р°: " + hit.distance.ToString() + " Рј";
         }
     }
 }
