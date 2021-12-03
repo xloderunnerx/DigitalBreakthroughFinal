@@ -17,19 +17,22 @@ public class GetStatistics : MonoBehaviour
 
     void Start()
     {
-        
+        StartCoroutine(ChangeChargesDrone());
     }
 
     public IEnumerator ChangeChargesDrone()
     {
-        yield return new WaitForSeconds(90);
-        charges -= 1;
-        chargesLabel.text = charges.ToString();
+        while (true)
+        {
+            yield return new WaitForSeconds(30);
+            charges -= 1;
+            chargesLabel.text = "Заряд устройства: " + charges.ToString() + "%";
+        }
     }
 
     void Update()
     {
-        ChangeChargesDrone();
+        
         coordinatesLabel.text = "Координаты: " + drone.transform.position.x + "," + drone.transform.position.y;
     }
 
@@ -37,7 +40,7 @@ public class GetStatistics : MonoBehaviour
     {
         if (Physics.Raycast(drone.transform.position, drone.transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
         {
-            heightDroneLabel.text = "Высота: " + hit.distance.ToString() + " м";
+            heightDroneLabel.text = "Высота: " + hit.distance.ToString() + "м";
         }
     }
 }
