@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Crosstales.RTVoice;
+using System.Collections;
 using UnityEngine;
 
 public class TrackManager : MonoBehaviour
@@ -7,6 +8,10 @@ public class TrackManager : MonoBehaviour
     private int waypointCounter;
     [Tooltip("Array of our waypoints, they get dynamically added and you can re-position them in order if something goes wrong.(Probably will not)")]
     public Transform[] waypointArray; //put them here in order you wish to circuit or click on a button
+    public GameObject drone;
+    public BoxCollider boxCollider;
+
+    public bool isNearByRing = false;
 
     private void Awake()
     {
@@ -54,6 +59,7 @@ public class TrackManager : MonoBehaviour
 
         LapTimerMethod();
         ActivateNextWayPoint();
+        CheckRingNearBy(_waypoint);
     }
 
     [Tooltip("Color of waypoints that will be emmitting when they are not the next in the row to be passed through.")]
@@ -93,6 +99,21 @@ public class TrackManager : MonoBehaviour
         ActivateSecondNextWayPoint();
     }
 
+    private void CheckRingNearBy(Transform waypoint)
+    {
+        if (waypointCounter <= 0)
+        {
+            return;
+        }
+
+        if ((drone.transform.position.x > waypoint.position.x + 15))
+        {
+            Speaker.Instance.SpeakNative("Вы сбились с маршрута", Speaker.Instance.VoiceForGender(Crosstales.RTVoice.Model.Enum.Gender.FEMALE, "ru-RU", 0, "ru-RU"), 1.3f, 1, 1, true);
+            isNearByRing = true;
+        }
+        
+    }
+
     public void LightRangeUpdate()
     {
         foreach (Transform t in waypointArray)
@@ -117,44 +138,6 @@ public class TrackManager : MonoBehaviour
 
         }
     }
-
-    /*DONT USE THIS!
-    public AudioClip blipSound;
-    public bool goOnce = false;
-    public void AddSound()
-    {
-        if(goOnce == false)
-        foreach (Transform t in waypointArray)
-        {
-
-            if (t.Find("sound"))
-                print("gggggg");
-            else
-            {
-                if (blipSound)
-                {
-                    GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    DestroyImmediate(go.GetComponent<MeshFilter>());
-                    DestroyImmediate(go.GetComponent<BoxCollider>());
-                    DestroyImmediate(go.GetComponent<MeshRenderer>());
-                    go.AddComponent<AudioSource>();
-                    go.GetComponent<AudioSource>().clip = blipSound;
-                        go.GetComponent<AudioSource>().playOnAwake = false;
-                        go.GetComponent<AudioSource>().spatialBlend = 1.0f;
-                        go.GetComponent<AudioSource>().volume = 0.1f;
-                    go.name = "sound";
-                    go.transform.SetParent(t);
-                    go.transform.localPosition = Vector3.zero;
-                    go.transform.localRotation = Quaternion.Euler(Vector3.zero);
-                }
-                else
-                    print("no sound");
-
-            }
-        }
-        goOnce = true;
-    }
-    */
 
     void ActivateSecondNextWayPoint()
     {
@@ -209,8 +192,6 @@ public class TrackManager : MonoBehaviour
         }
     }
 
-    //IM A BIG Batman FAN - "Anakin Skywalker"
-    //p.s. don't feed the troll
     void OnePaintMethodToRuleThemAll()
     {
 
