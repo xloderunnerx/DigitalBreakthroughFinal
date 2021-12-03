@@ -4,9 +4,9 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
-public class PracticeStatisticsViewController : MonoBehaviour
+public class ExamStatisticsViewController : MonoBehaviour
 {
-    public StatisticsPracticeDataList statisticsPracticeDataList;
+    public StatisticsExamDataList statisticsExamDataList;
     public TextMeshProUGUI time;
     public TextMeshProUGUI tries;
     public TextMeshProUGUI height;
@@ -22,7 +22,7 @@ public class PracticeStatisticsViewController : MonoBehaviour
 
     public void Load()
     {
-        var lastRecord = statisticsPracticeDataList.Value.ToList().LastOrDefault();
+        var lastRecord = statisticsExamDataList.Value.ToList().LastOrDefault();
         var minutes = (int)lastRecord.flightTime / 60;
         var seconds = (int)(lastRecord.flightTime - minutes * 60);
         var minutesStr = minutes < 10 ? "0" + minutes : minutes.ToString();
@@ -30,7 +30,7 @@ public class PracticeStatisticsViewController : MonoBehaviour
         time.text = minutes + " мин. " + seconds + " сек.";
         tries.text = lastRecord.prevTries.ToString();
         height.text = ((int)lastRecord.maxHeight).ToString() + "м";
-        tasks.text = "1/1";
+        tasks.text = (lastRecord.validTreesItems + 1) + "/9";
         mistakes.text = lastRecord.powerLinesEncounters.ToString();
         hits.text = lastRecord.hitsCount.ToString();
         droneHealth.text = lastRecord.droneHealthState.ToString() + "%";
