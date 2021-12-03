@@ -30,7 +30,11 @@ public class PowerLineWarn : MonoBehaviour
             StatisticsExamController.instance.UpdatePowerLinesEncounters();
             return;
         }
-        Speaker.Instance.SpeakNative(warning, Speaker.Instance.VoiceForGender(Crosstales.RTVoice.Model.Enum.Gender.FEMALE, "ru-RU", 0, "ru-RU"), 1.3f, 1, 1, true);
+        else
+        {
+            StatisticsPracticeController.instance.UpdatePowerLinesEncounters();
+            Speaker.Instance.SpeakNative(warning, Speaker.Instance.VoiceForGender(Crosstales.RTVoice.Model.Enum.Gender.FEMALE, "ru-RU", 0, "ru-RU"), 1.3f, 1, 1, true);
+        }
 
     }
 

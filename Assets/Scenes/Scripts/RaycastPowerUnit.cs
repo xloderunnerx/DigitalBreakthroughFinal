@@ -38,7 +38,13 @@ public class RaycastPowerUnit : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && !hit.collider.GetComponentInParent<PowerPlantUnit>().isBroken)
         {
             Speaker.Instance.SpeakNative(warning, Speaker.Instance.VoiceForGender(Crosstales.RTVoice.Model.Enum.Gender.FEMALE, "ru-RU", 0, "ru-RU"), 1.3f, 1, 1, true);
+            StatisticsPracticeController.instance.UpdateWrongPowerplantUnit();
         }
+        else if(Input.GetKeyDown(KeyCode.E))
+        {
+            StatisticsPracticeController.instance.SaveData();
+        }
+
 
         var powerUnit = hit.collider.GetComponentInParent<PowerPlantUnit>();
         if(locked != powerUnit)

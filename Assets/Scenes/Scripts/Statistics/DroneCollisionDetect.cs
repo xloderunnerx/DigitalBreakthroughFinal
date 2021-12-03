@@ -14,5 +14,11 @@ public class DroneCollisionDetect : MonoBehaviour
             health -= 10;
             StatisticsExamController.instance.UpdateHealthState((int)health);
         }
+        else
+        {
+            StatisticsPracticeController.instance.UpdateHits();
+            health -= 10;
+            StatisticsPracticeController.instance.UpdateHealthState((int)health);
+        }
     }
 }

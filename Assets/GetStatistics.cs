@@ -43,8 +43,9 @@ public class GetStatistics : MonoBehaviour
         if (Physics.Raycast(drone.transform.position, drone.transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
         {
             heightDroneLabel.text = "Высота: " + hit.distance.ToString() + "м";
-            if(isExam)
-            StatisticsExamController.instance.UpdateHeight(hit.distance);
+            if (isExam)
+                StatisticsExamController.instance.UpdateHeight(hit.distance);
+            else StatisticsPracticeController.instance.UpdateHeight(hit.distance);
         }
     }
 }

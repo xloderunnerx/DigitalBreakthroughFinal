@@ -18812,6 +18812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   variables:
   - {fileID: 11400000, guid: 125ad77ed0f651946bc81e4eacbbd774, type: 2}
+  - {fileID: 11400000, guid: 65bd389d11ed48749ae77b7c444a999d, type: 2}
 --- !u!1 &1828105630
 GameObject:
   m_ObjectHideFlags: 0

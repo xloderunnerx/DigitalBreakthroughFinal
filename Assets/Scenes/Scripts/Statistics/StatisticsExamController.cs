@@ -18,6 +18,7 @@ public class StatisticsExamController : MonoBehaviour
     {
         statisticsExamData = new StatisticsExamData();
         statisticsExamData.prevTries = statisticsExamDataList.Value.Length;
+        statisticsExamData.droneHealthState = 100;
     }
 
     public void UpdateHeight(float value)
