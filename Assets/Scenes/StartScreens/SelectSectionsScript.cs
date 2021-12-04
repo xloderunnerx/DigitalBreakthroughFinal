@@ -8,7 +8,6 @@ public class SelectSectionsScript : MonoBehaviour
     public GameObject practiceCanvas;
     public GameObject lectionsCanvas;
 
-    
     void Start()
     {
         
