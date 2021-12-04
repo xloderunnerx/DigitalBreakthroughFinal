@@ -25,7 +25,7 @@ public class RaycastTreeUnit : MonoBehaviour
         var hit = new RaycastHit();
         var hits = Physics.RaycastAll(transform.position, transform.forward, 10);
 
-        if(hits.ToList().Where(h => h.collider.GetComponent<TreeUnit>()).ToList().Count == 0)
+        if (hits.ToList().Where(h => h.collider.GetComponent<TreeUnit>()).ToList().Count == 0)
         {
             locked = null;
             Destroy(buttonHint);
@@ -46,6 +46,9 @@ public class RaycastTreeUnit : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            if (treeUnit.isTooHigh)
+                StatisticsExamController.instance.UpdateValidTrees();
+            else StatisticsExamController.instance.UpdateWrongTrees();
             treeUnit.collected = true;
             locked = null;
             Destroy(buttonHint);
@@ -61,7 +64,7 @@ public class RaycastTreeUnit : MonoBehaviour
         if (buttonHint == null)
         {
             buttonHint = Instantiate(buttonHintPrefab);
-            
+
             buttonHint.transform.position = treeUnit.transform.position + (transform.position - treeUnit.transform.position).normalized * treeUnit.GetComponentInChildren<CapsuleCollider>().radius * 1.2f;
         }
 
