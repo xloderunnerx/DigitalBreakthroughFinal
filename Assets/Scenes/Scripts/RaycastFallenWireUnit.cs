@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RaycastFallenWireUnit : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class RaycastFallenWireUnit : MonoBehaviour
             powerUnit.collected = true;
             StatisticsExamController.instance.UpdateFallenWire();
             StatisticsExamController.instance.SaveData();
+            SceneManager.LoadScene(4);
         }
 
         if (locked != powerUnit)

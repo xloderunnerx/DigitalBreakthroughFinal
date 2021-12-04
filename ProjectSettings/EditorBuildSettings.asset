@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/StartScreens/StartScreens.unity
+    guid: a8634f0851133594faf69ac8b38600d5
+  - enabled: 1
+    path: "Assets/Scenes/Tutorial/\u041E\u0431\u0443\u0447\u0435\u043D\u0438\u0435.unity"
+    guid: 4daa50957b1614d4a923c77d41e71a77
+  - enabled: 1
+    path: Assets/Scenes/ExamScene.unity
+    guid: 58182f684990bb24f9fe0c729215d04e
+  - enabled: 1
+    path: Assets/Scenes/TrainingScene.unity
+    guid: 06f203789bf189b4f8d5d05e28dc0e8a
+  - enabled: 1
+    path: Assets/Scenes/Statistics/ExamStatistics.unity
+    guid: 09dbc879388430242b8b88b2e9555b5f
+  - enabled: 1
+    path: Assets/Scenes/Statistics/PractisStatistics.unity
+    guid: 56e13c0c91530d54897b6717b4114542
   m_configObjects: {}

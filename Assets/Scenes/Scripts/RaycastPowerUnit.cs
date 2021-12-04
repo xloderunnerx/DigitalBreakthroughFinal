@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RaycastPowerUnit : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class RaycastPowerUnit : MonoBehaviour
         else if(Input.GetKeyDown(KeyCode.E))
         {
             StatisticsPracticeController.instance.SaveData();
+            SceneManager.LoadScene(5);
         }
 
 
