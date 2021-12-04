@@ -92,5 +92,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColour: {r: 0, g: 1, b: 0.048275948, a: 0.766}
-    - _PlayerPosition: {r: 180.29588, g: 23.669333, b: 184.02722, a: 0}
+    - _PlayerPosition: {r: 100.65525, g: 19.791838, b: 135.80943, a: 0}
   m_BuildTextureStacks: []
