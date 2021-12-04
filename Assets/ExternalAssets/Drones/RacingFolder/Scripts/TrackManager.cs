@@ -1,6 +1,7 @@
 ﻿using Crosstales.RTVoice;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TrackManager : MonoBehaviour
 {
@@ -217,6 +218,9 @@ public class TrackManager : MonoBehaviour
         else if (waypointCounter == 0)
         {
             //print("Lap ended");
+
+            SceneManager.LoadScene(0);
+
             if(onTrackManagerFinished != null)
                 onTrackManagerFinished();
 
