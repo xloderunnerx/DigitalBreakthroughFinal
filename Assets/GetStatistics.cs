@@ -28,21 +28,21 @@ public class GetStatistics : MonoBehaviour
         {
             yield return new WaitForSeconds(30);
             charges -= 1;
-            chargesLabel.text = "Заряд устройства: " + charges.ToString() + "%";
+            chargesLabel.text = charges.ToString() + "%";
         }
     }
 
     void Update()
     {
         
-        coordinatesLabel.text = "Координаты: " + drone.transform.position.x + "," + drone.transform.position.y;
+        coordinatesLabel.text = drone.transform.position.x + "," + drone.transform.position.y;
     }
 
     private void FixedUpdate()
     {
         if (Physics.Raycast(drone.transform.position, drone.transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
         {
-            heightDroneLabel.text = "Высота: " + hit.distance.ToString() + "м";
+            heightDroneLabel.text = hit.distance.ToString() + "м";
             if (isExam)
                 StatisticsExamController.instance.UpdateHeight(hit.distance);
             else StatisticsPracticeController.instance.UpdateHeight(hit.distance);
