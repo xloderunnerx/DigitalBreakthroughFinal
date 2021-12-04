@@ -8,5 +8,7 @@ public class SceneLoaderOnClick : MonoBehaviour
 {
     public int sceneIndex;
 
-    public void Load() => GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene(sceneIndex));
+    private void Awake() => GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene(sceneIndex));
+
+
 }
